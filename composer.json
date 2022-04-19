@@ -1,7 +1,8 @@
 {
     "name": "php_learning/composer",
     "require": {
-        "michelf/php-markdown": "1.9.*@dev"
+        "michelf/php-markdown": "1.9.*@dev",
+        "symfony/var-dumper": "^5.4"
     },
     "autoload": {
         "psr-4": {
