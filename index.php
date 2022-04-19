@@ -1,22 +1,17 @@
 <?php
 
-  require "vendor/autoload.php";
-  use Users\Utilisateurs\User;
-  use Users\Utilisateurs\Dev;
-  use Michelf\Markdown;
+require "vendor/autoload.php";
 
-require 'class/Autoloader.php';
-  Autoloader::register();
+use Raphael\Src\Models\Dev;
+use Michelf\Markdown;
 
-  echo Markdown::defaultTransform("Ici le test pour installation d'une **librairie** depuis php simple");
+echo Markdown::defaultTransform("Ici le test pour installation d'une **librairie** depuis php simple");
 
-  $raph = new Dev('Raphael', 'Kalinowski');
-  echo $raph->getFullName();
-  echo '<br>';
-  $raph->setRole('junior');
-  echo '<br>';
-  echo $raph->getRole();
+$raph = new Dev('Raphael', 'Kalinowski');
+echo $raph->getFullName();
+echo '<br>';
+$raph->setRole('junior');
+echo '<br>';
+echo $raph->getRole();
 
-  dump($raph);
-
-?>
+dump($raph);

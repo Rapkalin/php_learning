@@ -1,12 +1,12 @@
 {
-    "name": "php_learning/composer",
+    "name": "php_learning/my_project",
     "require": {
         "michelf/php-markdown": "1.9.*@dev",
         "symfony/var-dumper": "^5.4"
     },
     "autoload": {
         "psr-4": {
-            "PhpLearning\\Composer\\": "src/"
+            "Raphael\\Src\\": "src/"
         }
     },
     "authors": [

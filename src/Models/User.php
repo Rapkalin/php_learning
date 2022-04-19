@@ -1,13 +1,14 @@
 <?php
 
 declare(strict_types=1);
-namespace Users\Utilisateurs;
+namespace Raphael\Src\Models;
 
-class User {
+abstract class User
+{
     private string $role;
     private const ROLES = ['junior', 'confirmed', 'senior'];
 
-    public function __construct(private string $firstName, private string $lastName)
+    public function __construct(protected string $firstName, protected string $lastName)
     {
       if ($firstName === '' || $lastName === '' ) {
         trigger_error(
@@ -58,5 +59,3 @@ class User {
       return "Le role actuel est : " . $this->role;
     }
 }
-
-?>
