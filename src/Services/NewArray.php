@@ -61,12 +61,13 @@ class NewArray
 
         // étape 2 : j'enregistre la partie retirée dans une variable
         $chunks = $collection->chunk($middleKey);
-//            ->each(function($value, $key) use ($middleKey) {
-//                if ($key >= $middleKey) {
-//                    $removedPart[] = $value;
-//                }
-//            })
+
+        $newcollect = $chunks->all()[0];
+        dump($newcollect); // a vérifier pour récup la 1ère partie de chunk (ie. chhubk[0]) et push la second partie apres avoir ajouté la data
+        $newcollect->push($data)->push($chunks->all()[1]);
+
         dump($chunks->all());
+        dump($chunks->all()[1]);
 
         // étape 3 : J'enlève la partie du tableau qui se situe après la 2ème moitié ($middleKey) du tableau
 //        $array = array_slice($array, 0, $middleKey);
