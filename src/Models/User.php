@@ -3,7 +3,7 @@
 declare(strict_types=1);
 namespace Raphael\Src\Models;
 
-abstract class User
+class User
 {
     private string $role;
     private const ROLES = ['junior', 'confirmed', 'senior'];
