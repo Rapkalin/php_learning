@@ -13,7 +13,9 @@ $array = NewArray::createArray();
 $raph = new Dev('Raphael', 'Kalinowski');
 echo $raph->getFullName();
 $raph->setRole('junior');
+echo '<br>';
 echo $raph->getRole();
+echo '<br>';
 
 dump($raph);
 dump($array);
@@ -24,6 +26,12 @@ $sortedArray = collect($array)
     {
         return $sortedArray > 50;
     })
-    ->sort();
+    ->sort()
+    ->values()
+    ->toArray();
 
 dump($sortedArray);
+
+// Exercice: Ajouter le nombre 420 au milieu du $sortedArray
+$newArray = NewArray::addItemsMiddle($sortedArray, 420);
+dump($newArray);
