@@ -18,7 +18,6 @@ abstract class User
        }
     }
 
-
     public function getFullName() : string
     {
       return "Le nom complet de cet utilisateur est " . $this->firstName . ' ' . $this->lastName;
