@@ -18,4 +18,12 @@ echo $raph->getRole();
 dump($raph);
 dump($array);
 
-/*collect($array)*/
+// Exercice: Sort each item of $array in order and then remove any number below 50
+$sortedArray = collect($array)
+    ->filter(function($sortedArray)
+    {
+        return $sortedArray > 50;
+    })
+    ->sort();
+
+dump($sortedArray);

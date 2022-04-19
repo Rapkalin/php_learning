@@ -16,7 +16,7 @@ class NewArray
 
         do {
             $num = rand(0, 80);
-            $array[] = "word: $num";
+            $array[] = $num;
         } while (count($array) < 10);
 
         return $array;
