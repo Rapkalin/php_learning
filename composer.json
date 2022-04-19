@@ -2,7 +2,8 @@
     "name": "php_learning/my_project",
     "require": {
         "michelf/php-markdown": "1.9.*@dev",
-        "symfony/var-dumper": "^5.4"
+        "symfony/var-dumper": "^5.4",
+        "illuminate/collections": "^8.83"
     },
     "autoload": {
         "psr-4": {
