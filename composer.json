@@ -1,0 +1,17 @@
+{
+    "name": "php_learning/composer",
+    "require": {
+        "michelf/php-markdown": "1.9.*@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpLearning\\Composer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Raphael Kalinowski",
+            "email": "raphael@myminicom.com"
+        }
+    ]
+}
