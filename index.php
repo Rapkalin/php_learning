@@ -13,7 +13,7 @@ require 'class/Autoloader.php';
   $raph = new Dev('Raphael', 'Kalinowski');
   echo $raph->getFullName();
   echo '<br>';
-  $raph->setRole('senior');
+  $raph->setRole('junior');
   echo '<br>';
   echo $raph->getRole();
 
