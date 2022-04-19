@@ -17,4 +17,6 @@ require 'class/Autoloader.php';
   echo '<br>';
   echo $raph->getRole();
 
+  dump($raph);
+
 ?>
