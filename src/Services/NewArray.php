@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Raphael\Src\Models;
+namespace Raphael\Src\Services;
 
 class NewArray
 {

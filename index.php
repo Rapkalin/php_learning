@@ -3,7 +3,7 @@
 require "vendor/autoload.php";
 
 use Raphael\Src\Models\Dev;
-use Raphael\Src\Models\NewArray;
+use Raphael\Src\Services\NewArray;
 use Michelf\Markdown;
 
 echo Markdown::defaultTransform("Ici le test pour installation d'une **librairie markdown** et ci-dessous des collections :");
@@ -21,16 +21,24 @@ dump($raph);
 dump($array);
 
 // Exercice: Sort each item of $array in order and then remove any number below 50
+
+$definedValue = 50;
 $sortedArray = collect($array)
-    ->filter(function($sortedArray)
+    ->filter(static function($sortedArray) use ($definedValue)
     {
-        return $sortedArray > 50;
+        return $sortedArray > $definedValue;
     })
     ->sort()
     ->values()
     ->toArray();
-
 dump($sortedArray);
+
+$sortedArray2 = collect($array)
+    ->filter(fn ($sortedArray2) => $sortedArray2 > $definedValue)
+    ->sort()
+    ->values()
+    ->toArray();
+dump($sortedArray2);
 
 // Exercice: Ajouter le nombre 420 au milieu du $sortedArray
 $newArray = NewArray::addItemsMiddle($sortedArray, 420);
