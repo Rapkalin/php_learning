@@ -79,13 +79,14 @@ class NewArray
     public static function addMiddleCollect(\Illuminate\Support\Collection $collection, int $data) : \Illuminate\Support\Collection
     {
         // step 1 : I cut the collection in two
-        $chunks = $collection->chunk(2);
+        $splitted = $collection->splitIn(2);
+        dump("Check the chunk", $splitted->all());
 
         // step 2 : I return the first part of the collection which I added the data in the middle and merged the second part of the collection
-        return $chunks
+        return $splitted
             ->all()[0]
             ->push($data)
-            ->merge($chunks->all()[1])
+            ->merge($splitted->all()[1])
         ;
     }
 }
