@@ -42,7 +42,6 @@ class NewArray
         }
     }
 
-
     /**
      * @param array $array
      * @param int $data
@@ -79,13 +78,10 @@ class NewArray
      */
     public static function addMiddleCollect(\Illuminate\Support\Collection $collection, int $data) : \Illuminate\Support\Collection
     {
-        // step 1 : I retrieve the middle number of the collection
-        $middleKey = (int)round((($collection->count())-1)/2);
+        // step 1 : I cut the collection in two
+        $chunks = $collection->chunk(2);
 
-        // step 2 : I cut the collection in two
-        $chunks = $collection->chunk($middleKey);
-
-        // step 3 : I return the first part of the collection which I added the data in the middle and merged the second part of the collection
+        // step 2 : I return the first part of the collection which I added the data in the middle and merged the second part of the collection
         return $chunks
             ->all()[0]
             ->push($data)
