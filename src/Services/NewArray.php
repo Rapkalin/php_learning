@@ -74,7 +74,7 @@ class NewArray
      * @param int $data
      * @return \Illuminate\Support\Collection
      */
-    public static function addMiddleCollect(\Illuminate\Support\Collection $collection, int $data) : \Illuminate\Support\Collection
+    public static function addMiddleCollect(\Illuminate\Support\Collection $collection, int|string $data) : \Illuminate\Support\Collection
     {
         // step 1 : I cut the collection in two
         $splitted = $collection->splitIn(2);
