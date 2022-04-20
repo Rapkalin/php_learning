@@ -8,8 +8,6 @@ use Michelf\Markdown;
 
 echo Markdown::defaultTransform("Ici le test pour installation d'une **librairie markdown** et ci-dessous des collections :");
 
-$array = NewArray::createArray();
-
 $raph = new Dev('Raphael', 'Kalinowski');
 echo $raph->getFullName();
 $raph->setRole('junior');
@@ -18,26 +16,10 @@ echo $raph->getRole();
 echo '<br>';
 
 dump($raph);
-dump($array);
 
 // Exercice: Sort each item of $array in order and then remove any number below 50
-
-$definedValue = 50;
-//$sortedArray = collect($array)
-//    ->filter(static function($sortedArray) use ($definedValue)
-//    {
-//        return $sortedArray > $definedValue;
-//    })
-//    ->sort()
-//    ->values()
-//    ->toArray();
-//dump($sortedArray);
-
-$sortedCollect = collect($array)
-    ->filter(fn ($sortedCollect) => $sortedCollect > $definedValue)
-    ->sort()
-    ->values();
-dump($sortedCollect);
+$sortedCollect = NewArray::createCollect();
+dump("sorted Collection", $sortedCollect);
 
 // Exercice: Ajouter le nombre 420 au milieu du $sortedArray
 //$newArray = NewArray::addItemsMiddle($sortedArray, 420);

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Raphael\Src\Services;
 
+use mysql_xdevapi\Collection;
+
 class NewArray
 {
     /**
@@ -17,9 +19,25 @@ class NewArray
             $num = rand(0, 80);
             $array[] = $num;
         } while (count($array) < 10);
-
+        dump("created Array", $array);
         return $array;
     }
+
+    public static function createCollect(): \Illuminate\Support\Collection
+    {
+        $definedValue = 50;
+        $sortedCollect = collect(self::createArray())
+            ->filter(fn ($sortedCollect) => $sortedCollect > $definedValue)
+            ->sort()
+            ->values();
+
+        if(($sortedCollect->count()) < 2) {
+            return self::createCollect();
+        } else {
+            return $sortedCollect;
+        }
+    }
+
 
     /**
      * @param array $array
