@@ -27,17 +27,15 @@ class NewArray
     public static function createCollect(): \Illuminate\Support\Collection
     {
         $definedValue = 50;
-        $sortedCollect = collect(self::createArray())
-            ->filter(fn ($sortedCollect) => $sortedCollect > $definedValue)
-            ->sort()
-            ->values();
 
-        // if the sorted collection if < 2 restart the function
-        if(($sortedCollect->count()) < 2) {
-            return self::createCollect();
-        } else {
-            return $sortedCollect;
-        }
+        do {
+            $sortedCollect = collect(self::createArray())
+                ->filter(fn ($sortedCollect) => $sortedCollect > $definedValue)
+                ->sort()
+                ->values();
+        } while ($sortedCollect->count() < 2);
+
+        return $sortedCollect;
     }
 
     /**
