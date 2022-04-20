@@ -23,6 +23,9 @@ class NewArray
         return $array;
     }
 
+    /**
+     * @return \Illuminate\Support\Collection
+     */
     public static function createCollect(): \Illuminate\Support\Collection
     {
         $definedValue = 50;
@@ -31,6 +34,7 @@ class NewArray
             ->sort()
             ->values();
 
+        // if the sorted collection if < 2 restart the function
         if(($sortedCollect->count()) < 2) {
             return self::createCollect();
         } else {
