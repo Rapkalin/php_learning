@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Raphael\Src\Services;
 
-use mysql_xdevapi\Collection;
-
 class NewArray
 {
     /**
