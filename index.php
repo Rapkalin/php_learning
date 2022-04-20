@@ -23,23 +23,26 @@ dump($array);
 // Exercice: Sort each item of $array in order and then remove any number below 50
 
 $definedValue = 50;
-$sortedArray = collect($array)
-    ->filter(static function($sortedArray) use ($definedValue)
-    {
-        return $sortedArray > $definedValue;
-    })
-    ->sort()
-    ->values()
-    ->toArray();
-dump($sortedArray);
+//$sortedArray = collect($array)
+//    ->filter(static function($sortedArray) use ($definedValue)
+//    {
+//        return $sortedArray > $definedValue;
+//    })
+//    ->sort()
+//    ->values()
+//    ->toArray();
+//dump($sortedArray);
 
-$sortedArray2 = collect($array)
-    ->filter(fn ($sortedArray2) => $sortedArray2 > $definedValue)
+$sortedCollect = collect($array)
+    ->filter(fn ($sortedCollect) => $sortedCollect > $definedValue)
     ->sort()
-    ->values()
-    ->toArray();
-dump($sortedArray2);
+    ->values();
+dump($sortedCollect);
 
 // Exercice: Ajouter le nombre 420 au milieu du $sortedArray
-$newArray = NewArray::addItemsMiddle($sortedArray, 420);
-dump($newArray);
+//$newArray = NewArray::addItemsMiddle($sortedArray, 420);
+//dump($newArray);
+
+// Exercice: Transformer la fonction addItemsMiddle pour des collections
+$newCollect = NewArray::addMiddleCollect($sortedCollect, 420);
+dump($newCollect);
