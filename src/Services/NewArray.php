@@ -61,7 +61,6 @@ class NewArray
      */
     public static function addMiddleCollect(\Illuminate\Support\Collection $collection, int $data) : \Illuminate\Support\Collection
     {
-        // étape 1 : Je récupère la key correspondant à la moitié du tableau que j'arrondis
         $middleKey = (int)round((($collection->count())-1)/2);
         $chunks = $collection->chunk($middleKey);
         $newCollect = $chunks->all()[0];
