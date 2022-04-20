@@ -26,5 +26,5 @@ dump("sorted Collection", $sortedCollect);
 //dump($newArray);
 
 // Exercice: Transformer la fonction addItemsMiddle pour des collections
-$newCollect = NewArray::addMiddleCollect($sortedCollect, 420);
+$newCollect = NewArray::addMiddleCollect($sortedCollect, "test");
 dump($newCollect);
